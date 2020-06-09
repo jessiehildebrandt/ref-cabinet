@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <link type="text/css" rel="stylesheet" href="js/lib/jquery-ui-1.12.1/jquery-ui.min.css">
+    <link type="text/css" rel="stylesheet" href="js/lib/jquery-ui-1.12.1/theme.css">
+    <link type="text/css" rel="stylesheet" href="css/site.css" />
+    <title>RefCabinet</title>
+  </head>
+
+  <body>
+
+    <script src="js/lib/jquery-3.5.1.min.js"></script>
+    <script src="js/lib/jquery-ui-1.12.1/jquery-ui.min.js"></script>
+	<script src="js/index.js"></script>
+    <script async src="https://cse.google.com/cse.js?cx=012006706760214600109:066rehhbqgc"></script>
+
+    <div id="tab-bar">
+      <button id="new-tab-button" title="New Tab (Alt+N)" onclick="addTab();"><img src="img/tab.svg"></button>
+    </div>
+
+    <div id="tab-header">
+      <h1>...</h1>
+      <button id="clear-session-button" title="Clear Session (Alt+Q)" onclick="clearSession();"><img src="img/clear.svg"></button>
+      <button id="import-session-button" title="Import Session (Alt+F)" onclick="$( '#file-input' ).click();"><img src="img/import.svg"></button>
+      <button id="export-session-button" title="Export Session (Alt+O)" onclick="exportSession();"><img src="img/export.svg"></button>
+      <button id="delete-tab-button" title="Delete Tab (Alt+Z)" onclick="deleteTab();"><img src="img/delete.svg"></button>
+      <button id="rename-tab-button" title="Rename Tab (Alt+R)" onclick="renameTab();"><img src="img/rename.svg"></button>
+      <button id="new-card-button" title="Add Card (Alt+C)" onclick="addCard();"><img src="img/add.svg"></button>
+    </div>
+
+    <div id="tab-content">
+      <div class="spacer"></div>
+      <div class="spacer"></div>
+    </div>
+
+    <div id="key-guide-wrapper" class="hidden" onclick="$( this ).toggleClass( 'hidden' );">
+      <div id="key-guide-dialog">
+        <p><b>Keyboard Shortcuts</b>:</p>
+        <p>
+          <b>alt+q</b>: Clear session
+          <br>
+          <b>alt+f</b>: Import session file
+          <br>
+          <b>alt+o</b>: Export session file
+          <br>
+          <br>
+          <b>alt+n</b>: Create new tab
+          <br>
+          <b>alt+z</b>: Close current tab
+          <br>
+          <b>alt+r</b>: Rename current tab
+          <br>
+          <br>
+          <b>alt+j</b> / <b>alt+left</b>: Previous tab
+          <br>
+          <b>alt+k</b> / <b>alt+right</b>: Next tab
+          <br>
+          <br>
+          <b>alt+c</b>: Create new card
+          <br>
+          <br>
+          <b>tab</b> / <b>shift+tab</b>: Cycle selected card
+          <br>
+          <br>
+          <b>?</b>: Show/hide this guide
+        </p>
+      </div>
+    </div>
+
+    <div id="loading-wrapper">
+      <div id="loading-dialog">
+        <h4>Initializing RefCabinet...</h4>
+        <small>Press '<b>?</b>' for a list of hotkeys.</small>
+      </div>
+    </div>
+
+    <input id="file-input" type="file" accept=".refcab" onchange="importSession();">
+
+  </body>
+
+</html>

@@ -1,0 +1,323 @@
+/* Poppins font faces */
+@font-face {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    src: url("../font/Poppins/Poppins-Regular.ttf") format("truetype");
+}
+@font-face {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    src: url("../font/Poppins/Poppins-Bold.ttf") format("truetype");
+}
+
+/* Set up the html properties */
+html {
+	position: relative;
+	height: 100%;
+    background-image: url('../img/background.png');
+    background-repeat: repeat;
+    background-color: #FCFCFC;
+    color: #212121;
+    font-family: 'Poppins', sans, sans-serif;
+    font-size: 16px;
+    text-rendering: optimizeLegibility;
+}
+@media screen and (max-width: 1000px) {
+	html {
+		font-size: 16px;
+	}
+}
+@media screen and (max-width: 650px) {
+	html {
+		font-size: 15px;
+	}
+}
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    margin: 0px;
+}
+
+/* Tab bar */
+#tab-bar {
+    display: flex;
+    width: 100%;
+    height: 55px;
+    background-color: #212121;
+    align-items: stretch;
+    justify-content: safe center;
+    overflow-x: scroll;
+}
+.tab, .tab-placeholder {
+    width: 100px;
+    min-width: 100px;
+    text-align: center;
+    font-size: 0.9em;
+    border-radius: 10px 10px 0px 0px;
+    padding: 5px 15px;
+    margin: 10px 10px 0px 10px;
+}
+.tab {
+    cursor: pointer;
+    user-select: none;
+    background: #9e9e9e;
+    transition: background-color 0.15s;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.tab-placeholder {
+    background: #616161;
+}
+.tab:hover {
+    background: #bdbdbd;
+}
+.tab.active {
+    cursor: default;
+    color: #FCFCFC;
+    font-weight: bold;
+    background: #f4511e;
+}
+#new-tab-button {
+    display: flex;
+    border: 0;
+    color: #fcfcfc;
+    cursor: pointer;
+    width: 30px;
+    min-width: 30px;
+    height: 30px;
+    padding: 8px;
+    margin: auto 10px;
+    background: #9e9e9e;
+    border-radius: 15px;
+    font-size: 1em;
+}
+#new-tab-button img {
+    margin: auto;
+}
+#new-tab-button:hover {
+    background: #bdbdbd;
+}
+#new-tab-button:active {
+    background: #616161;
+}
+
+/* Tab header */
+#tab-header {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin: 10px auto 0px;
+}
+#tab-header h1 {
+    min-width: 100%;
+    margin-top: 0px;
+    margin-bottom: 5px;
+    text-align: center;
+    font-weight: 700;
+    font-size: 1em;
+    color: #f4511e;
+}
+#tab-header button {
+    display: flex;
+    vertical-align: middle;
+    margin: 0px 5px;
+    height: 35px;
+    width: 35px;
+    border: 0;
+    cursor: pointer;
+    user-select: none;
+    border-radius: 15px;
+    font-size: 1.25em;
+    color: #FCFCFC;
+    transition: 0.15s;
+}
+#tab-header button img {
+    margin: auto;
+}
+#clear-session-button {
+    background: #2196f3;
+}
+#clear-session-button:hover {
+    background: #42a5f5;
+}
+#clear-session-button:active {
+    background: #1565c0;
+}
+#import-session-button {
+    background: #00bcd4;
+}
+#import-session-button:hover {
+    background: #26c6da;
+}
+#import-session-button:active {
+    background: #00838f;
+}
+#export-session-button {
+    background: #009688;
+}
+#export-session-button:hover {
+    background: #26a69a;
+}
+#export-session-button:active {
+    background: #00695c;
+}
+#delete-tab-button {
+    background: #f44336;
+}
+#delete-tab-button:hover {
+    background: #ef5350;
+}
+#delete-tab-button:active {
+    background: #c62828;
+}
+#rename-tab-button {
+    background: #ff9800;
+}
+#rename-tab-button:hover {
+    background: #ffa726;
+}
+#rename-tab-button:active {
+    background: #ef6c00;
+}
+#new-card-button {
+    background: #4caf50;
+}
+#new-card-button:hover {
+    background: #66bb6a;
+}
+#new-card-button:active {
+    background: #2e7d32;
+}
+
+/* Tab content */
+#tab-content {
+    flex: 1;
+    display: flex;
+    justify-content: safe center;
+    align-items: stretch;
+    overflow-x: scroll;
+}
+.spacer {
+    min-width: 15px;
+}
+
+/* Cards */
+.card, .card-placeholder {
+    width: 250px;
+    min-width: 250px;
+    padding: 15px;
+    margin: 15px;
+    border-radius: 15px;
+}
+.card {
+    display: flex;
+    cursor: move;
+    flex-direction: column;
+    background-color: #e0e0e0;
+    overflow: hidden;
+}
+.card.hidden {
+    display: none;
+}
+.card-placeholder {
+    background-color: #ffccbc;
+}
+.card-content {
+    cursor: default;
+    height: 100%;
+    overflow-y: scroll;
+}
+.searchbar {
+    border: solid 1px #fff;
+    border-radius: 15px;
+    padding: 5px 15px;
+    font-size: 1em;
+    margin-bottom: 15px;
+    transition: border .15s;
+}
+.searchbar:hover {
+    border: solid 1px #bdbdbd;
+}
+.searchbar:focus {
+    border: solid 1px #ff5722;
+}
+
+/* Google Custom Search style overrides */
+.gsc-control-cse {
+    background: none !important;
+    border: none !important;
+    padding: 0 !important;
+}
+.gsc-results {
+    padding: 0 !important;
+}
+.gsc-result-info {
+    display: none;
+}
+.gsc-above-wrapper-area {
+    display: none;
+}
+.gsc-imageResult {
+    width: 100%;
+    background: none !important;
+}
+.gsc-imageResult img {
+    max-height: 400px;
+    max-width: 100%;
+}
+.gs-image-scalable {
+    height: auto !important;
+}
+.gsc-imageResult:last-child {
+    margin-bottom: 0 !important;
+}
+.gsc-cursor-box {
+    display: none;
+    margin-bottom: 0 !important;
+}
+.gcsc-branding {
+    display: none !important;
+}
+
+
+/* Modal dialogs */
+#loading-wrapper, #key-guide-wrapper {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.45);
+}
+#loading-wrapper.hidden, #key-guide-wrapper.hidden {
+    display: none;
+}
+#loading-dialog, #key-guide-dialog {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #fcfcfc;
+    border-radius: 15px;
+}
+#loading-dialog {
+    width: 300px;
+    height: 150px;
+}
+#key-guide-dialog {
+    width: 350px;
+    height: 480px;
+}
+
+/* Invisible file input */
+#file-input {
+    display: none;
+}
