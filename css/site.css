@@ -52,13 +52,13 @@ body {
     overflow-x: scroll;
 }
 .tab, .tab-placeholder {
-    width: 100px;
-    min-width: 100px;
+    width: 125px;
+    min-width: 125px;
     text-align: center;
     font-size: 0.9em;
     border-radius: 10px 10px 0px 0px;
     padding: 5px 15px;
-    margin: 10px 10px 0px 10px;
+    margin: 10px 5px 0px 5px;
 }
 .tab {
     cursor: pointer;
@@ -90,10 +90,11 @@ body {
     min-width: 30px;
     height: 30px;
     padding: 8px;
-    margin: auto 10px;
+    margin: auto 5px;
     background: #9e9e9e;
     border-radius: 15px;
     font-size: 1em;
+    transition: background-color 0.15s;
 }
 #new-tab-button img {
     margin: auto;
@@ -204,15 +205,22 @@ body {
     overflow-x: scroll;
 }
 .spacer {
-    min-width: 15px;
+    min-width: 10px;
+}
+.spacer:first-child {
+    margin-right: auto;
+}
+.spacer:last-child {
+    margin-left: auto;
 }
 
 /* Cards */
 .card, .card-placeholder {
     width: 250px;
     min-width: 250px;
-    padding: 15px;
-    margin: 15px;
+    padding: 10px;
+    margin: 15px 7.5px 15px 7.5px;
+    /* margin-right: 15px; */
     border-radius: 15px;
 }
 .card {
