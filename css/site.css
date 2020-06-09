@@ -142,58 +142,58 @@ body {
     margin: auto;
 }
 #clear-session-button {
-    background: #2196f3;
+    background: #a1887f;
 }
 #clear-session-button:hover {
-    background: #42a5f5;
+    background: #bcaaa4;
 }
 #clear-session-button:active {
-    background: #1565c0;
+    background: #8d6e63;
 }
 #import-session-button {
-    background: #00bcd4;
+    background: #03a9f4;
 }
 #import-session-button:hover {
-    background: #26c6da;
+    background: #4fc3f7;
 }
 #import-session-button:active {
-    background: #00838f;
+    background: #0288d1;
 }
 #export-session-button {
-    background: #009688;
+    background: #9575cd;
 }
 #export-session-button:hover {
-    background: #26a69a;
+    background: #b39ddb;
 }
 #export-session-button:active {
-    background: #00695c;
+    background: #7e57c2;
 }
 #delete-tab-button {
     background: #f44336;
 }
 #delete-tab-button:hover {
-    background: #ef5350;
+    background: #ff7961;
 }
 #delete-tab-button:active {
-    background: #c62828;
+    background: #d32f2f;
 }
 #rename-tab-button {
     background: #ff9800;
 }
 #rename-tab-button:hover {
-    background: #ffa726;
+    background: #ffb74d;
 }
 #rename-tab-button:active {
-    background: #ef6c00;
+    background: #fb8c00;
 }
 #new-card-button {
     background: #4caf50;
 }
 #new-card-button:hover {
-    background: #66bb6a;
+    background: #80e27e;
 }
 #new-card-button:active {
-    background: #2e7d32;
+    background: #388e3c;
 }
 
 /* Tab content */
