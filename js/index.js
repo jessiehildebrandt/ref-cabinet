@@ -68,8 +68,10 @@ const GCSEInit = function()
             return;
         }
 
-        // Hide the loading dialog
-        $( '#loading-wrapper' ).addClass( 'hidden' );
+        // Hide the loading dialog (but make sure the user has enough time to read the message)
+        setTimeout( function() {
+            $( '#loading-wrapper' ).addClass( 'hidden' );
+        }, 850 );
 
         // Add 'sortable' drag-and-drop behavior to the card container
         $( '#tab-content' ).sortable(
