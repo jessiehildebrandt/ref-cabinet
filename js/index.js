@@ -175,8 +175,8 @@ function processQueries()
         results.execute( query.query );
     }
 
-    // Prepare to do this again in 100-350ms
-    var randTimeout = Math.round( Math.random() * 250 ) + 100;
+    // Prepare to do this again in 100-400ms
+    var randTimeout = Math.round( Math.random() * 300 ) + 100;
     setTimeout( processQueries, randTimeout );
 
 }
@@ -222,10 +222,10 @@ function checkVisibleCards()
     }
 
     // If a timer to update the cards doesn't already exist, set a new one
-    // (This prevents the check from being run more than 10 times a second)
+    // (This prevents the check from being run more than 4 times a second)
     if ( typeof( checkVisibleCards.timerID ) === 'undefined' || checkVisibleCards.timerID === null )
     {
-        checkVisibleCards.timerID = setTimeout( updateCards, 100 );
+        checkVisibleCards.timerID = setTimeout( updateCards, 250 );
     }
 
 }
