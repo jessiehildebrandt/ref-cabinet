@@ -540,6 +540,32 @@ function handleHotkeys( event )
 
         }
 
+        // Alt+, (Scroll left)
+        else if ( event.which === 188 )
+        {
+            event.preventDefault();
+            let $tabContent = $( '#tab-content' );
+            $tabContent.stop().animate({
+                scrollLeft: $tabContent.scrollLeft() - 275,
+            },{
+                easing: 'linear',
+                duration: 100,
+            });
+        }
+
+        // Alt+. (Scroll right)
+        else if ( event.which === 190 )
+        {
+            event.preventDefault();
+            let $tabContent = $( '#tab-content' );
+            $tabContent.stop().animate({
+                scrollLeft: $tabContent.scrollLeft() + 275,
+            },{
+                easing: 'linear',
+                duration: 100,
+            });
+        }
+
     }
 
 }
