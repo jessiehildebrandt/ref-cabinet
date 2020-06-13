@@ -222,10 +222,10 @@ function checkVisibleCards()
     }
 
     // If a timer to update the cards doesn't already exist, set a new one
-    // (This prevents the check from being run more than 4 times a second)
+    // (This prevents the check from being run more than 3 times a second)
     if ( typeof( checkVisibleCards.timerID ) === 'undefined' || checkVisibleCards.timerID === null )
     {
-        checkVisibleCards.timerID = setTimeout( updateCards, 250 );
+        checkVisibleCards.timerID = setTimeout( updateCards, 333 );
     }
 
 }
