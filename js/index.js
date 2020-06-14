@@ -657,6 +657,9 @@ function importSession()
         loadSessionFromJSON( reader.result );
     }
 
+    // Save newly-imported session
+    saveSession();
+
 }
 
 /******************************/
