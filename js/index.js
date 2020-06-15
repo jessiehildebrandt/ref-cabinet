@@ -83,7 +83,7 @@ const GCSEInit = function()
                 placeholder: 'card-placeholder',
                 cancel: '.card-content, .searchbar',
                 containment: 'parent',
-                tolerance: 'pointer',
+                tolerance: 'intersect',
                 update: function( event, ui ) { saveSession(); },
             }
         );
@@ -96,7 +96,7 @@ const GCSEInit = function()
                 cursor: 'move',
                 placeholder: 'tab-placeholder',
                 containment: 'parent',
-                tolerance: 'pointer',
+                tolerance: 'intersect',
                 update: function( event, ui ) { saveSession(); },
             }
         );
@@ -145,6 +145,61 @@ window.__gcse = {
     parsetags: 'explicit',
 };
 
+const resultsReadyWordCloudCallback = function(
+        name, q, promos, results, resultsDiv) {
+    const stopWords = new Set()
+      .add('a')
+      .add('A')
+      .add('an')
+      .add('An')
+      .add('and')
+      .add('And')
+      .add('the')
+      .add('The');
+
+    const words = {};
+    const splitter = /["“”,\?\s\.\[\]\{\};:\-\(\)\/!@#\$%\^&*=\+\*]+/;
+    if (results) {
+        for (const {contentNoFormatting, titleNoFormatting} of results) {
+            const wordArray = (contentNoFormatting + ' ' + titleNoFormatting)
+              .split(splitter)
+              .map(w => w.toLowerCase());
+            for (const w of wordArray) {
+                if (w && !stopWords.has(w)) {
+                    words[w] = (words[w] + 1) || 1;
+                }
+            }
+        }
+    }
+    const dataForChart = [];
+    for (const key in words) {
+        const val = words[key];
+        dataForChart.push({
+            'x': key,
+            'value': val,
+        });
+    }
+
+    const container = document.createElement('div');
+    resultsDiv.appendChild(container);
+    container.id = 'container';
+    // create a tag (word) cloud chart
+    const chart = anychart.tagCloud(dataForChart);
+    // set a chart title
+    chart.title(`Words for query: "${q}"`)
+    // set an array of angles at which the words will be laid out
+    chart.angles([0, 45, 90, 135])
+    // display the word cloud chart
+    chart.container(container);
+    chart.draw();
+    return true; // Don't display normal search results.
+};
+window.__gcse || (window.__gcse = {});
+window.__gcse.searchCallbacks = {
+    web: {
+        ready: resultsReadyWordCloudCallback,
+    },
+};
 /******************************/
 /* $.isInViewport
  * jQuery extension function that reports whether or not $(this) is at least partially visible
